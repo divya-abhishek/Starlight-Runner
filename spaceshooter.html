@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starlight Runner</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(circle, #000033, #000);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    canvas {
+      display: block;
+    }
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 20px;
+      z-index: 10;
+    }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(5px); /* Blur effect */
+      z-index: 20;
+    }
+    #overlay.hidden {
+      display: none;
+    }
+    #overlay h1 {
+      font-family: 'Arial', sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: cyan;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    #overlay p {
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      color: lightblue;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    #overlay span {
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      color: cyan;
+      cursor: pointer;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <canvas id="gameCanvas"></canvas>
+  <div id="overlay">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <polygon points="50,10 60,40 90,40 65,60 75,90 50,75 25,90 35,60 10,40 40,40" fill="cyan" />
+    </svg>
+    <h1 id="startText">Press SPACE to Play</h1>
+    <p id="endScore" class="hidden">Your Score: <span id="finalScore">00</span></p>
+    <span id="restartText" class="hidden">Press SPACE to Restart</span>
+  </div>
+  <audio id="backgroundMusic" loop>
+    <source src="https://www.soundjay.com/free-music/sounds/cautious-path-01.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="collectSound">
+    <source src="https://www.soundjay.com/misc/sounds/small-bell-ring-01a.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="collisionSound">
+    <source src="https://www.soundjay.com/misc/sounds/fail-buzzer-03.mp3" type="audio/mpeg">
+  </audio>
+  <script src="game.js"></script>
+</body>
+</html>
