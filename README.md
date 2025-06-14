@@ -9,7 +9,7 @@
   <header class="center">
     <h1>🚀 Starlight Runner</h1>
     <p>A fast-paced, space-themed arcade game!</p>
-    <img src="https://i.ibb.co/RpMxcWNv/Untitled-1.jpg" alt="Game Preview">
+    <img src="https://i.postimg.cc/XJTC0F58/Screenshot-2025-06-14-120718.png" alt="Game Preview">
   </header>
 
   <hr>
@@ -160,7 +160,7 @@ canvas.height = window.innerHeight;
 
   <section>
     <h2>📸 Screenshots</h2>
-    <img src="https://i.ibb.co/RpMxcWNv/Untitled-1.jpg" alt="Gameplay Screenshot">
+    <img src="https://i.postimg.cc/XJTC0F58/Screenshot-2025-06-14-120718.png" alt="Gameplay Screenshot">
     <p><em>Capture of the gameplay in action.</em></p>
   </section>
 
